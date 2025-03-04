@@ -20,3 +20,9 @@ main {
   border-width: thick;
   border-style: solid;
 }
+
+.car-img {
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+}

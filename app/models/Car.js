@@ -17,22 +17,20 @@ export class Car {
   get card() {
     return `
     <div class="col-12">
-      <div class="row bg-light shadow car-border mb-3" style="border-color: aqua;">
+      <div class="row bg-light shadow car-border mb-3" style="border-color: ${this.color};">
         <div class="col-md-4 ps-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Wienermobile-NAIAS-2005.jpg"
-            alt="Weiner mobile" class="img-fluid">
+          <img src="${this.imgUrl}" alt="A picture of a ${this.make} ${this.model} for sale" class="car-img">
         </div>
         <div class="col-md-8">
           <div class="d-flex flex-column justify-content-between h-100">
             <div>
-              <p class="fs-3 mb-1">2024 Oscar Meyer Weiner Mobile</p>
-              <small>Listed on 12/12/2020</small>
+              <p class="fs-3 mb-1">${this.year} ${this.make} ${this.model}</p>
+              <small>Listed on ${this.createdAt.toLocaleDateString()}</small>
               <div class="d-flex mt-1 justify-content-between align-items-center">
-                <p class="fs-3">$100001</p>
-                <p class="fs-4">Engine: unknown</p>
+                <p class="fs-3">$${this.price.toLocaleString()}</p>
+                <p class="fs-4">Engine: ${this.engineType}</p>
               </div>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit recusandae sed sint voluptate
-                eligendi molestiae consequuntur quibusdam iusto perferendis ad!</p>
+              <p>${this.description}</p>
             </div>
             <div class="text-end mb-1">
               <button class="btn btn-outline-danger">
