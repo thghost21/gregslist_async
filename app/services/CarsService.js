@@ -7,7 +7,7 @@ class CarsService {
     const response = await api.get('api/cars')
     console.log('GOT CARS 📡📡📡📡', response.data);
     const cars = response.data.map(pojo => new Car(pojo))
-    AppState.cars = cars
+    AppState.cars = cars // trigger observer
   }
 }
 

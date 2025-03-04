@@ -17,7 +17,7 @@ export class Car {
   get card() {
     return `
     <div class="col-12">
-      <div class="row bg-light shadow car-border" style="border-color: aqua;">
+      <div class="row bg-light shadow car-border mb-3" style="border-color: aqua;">
         <div class="col-md-4 ps-0">
           <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Wienermobile-NAIAS-2005.jpg"
             alt="Weiner mobile" class="img-fluid">
