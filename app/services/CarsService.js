@@ -6,7 +6,9 @@ class CarsService {
   async createCar(carData) {
     // NOTE carData becomes the payload (request body) for this request
     const response = await api.post('api/cars', carData)
-    console.log('CREATED CAR 📡📡📡📡', response);
+    console.log('CREATED CAR 📡📡📡📡', response.data);
+    const car = new Car(response.data)
+    AppState.cars.unshift(car) // trigger observer
   }
   async getCars() {
     const response = await api.get('api/cars')
