@@ -32,7 +32,11 @@ export class Car {
               </div>
               <p>${this.description}</p>
             </div>
-            <div class="text-end mb-1">
+            <div class="d-flex justify-content-between mb-1">
+              <div>
+                <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img">
+                <span>${this.creator.name}</span>
+              </div>
               <button class="btn btn-outline-danger">
                 Delete Car
               </button>

@@ -8,7 +8,7 @@ class CarsService {
     const response = await api.post('api/cars', carData)
     console.log('CREATED CAR 📡📡📡📡', response.data);
     const car = new Car(response.data)
-    AppState.cars.unshift(car) // trigger observer
+    AppState.cars.push(car) // trigger observer
   }
   async getCars() {
     const response = await api.get('api/cars')
