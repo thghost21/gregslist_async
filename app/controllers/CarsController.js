@@ -6,6 +6,8 @@ import { Pop } from "../utils/Pop.js";
 export class CarsController {
   constructor() {
     AppState.on('cars', this.drawCars)
+    AppState.on('identity', this.drawCars)
+    AppState.on('identity', this.drawCarForm)
     console.log('Cars Controller is loaded!');
     this.getCars()
   }
@@ -16,6 +18,11 @@ export class CarsController {
     cars.forEach(car => content += car.card)
     const carsElem = document.getElementById('carListings')
     carsElem.innerHTML = content
+  }
+
+  drawCarForm() {
+    document.getElementById('carFormPlaceholder').classList.add('d-none')
+    document.getElementById('carForm').classList.remove('d-none')
   }
 
   async getCars() {

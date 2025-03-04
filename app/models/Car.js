@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Car {
   constructor(data) {
     this.id = data.id
@@ -12,6 +14,27 @@ export class Car {
     this.color = data.color
     this.engineType = data.engineType
     this.creator = data.creator
+    this.creatorId = data.creatorId
+  }
+
+  get deleteButton() {
+    // NOTE who is currently logged in
+    const user = AppState.identity
+
+    // NOTE if user is not logged in
+    if (user == null) {
+      return ''
+    }
+
+    if (this.creatorId != user.id) {
+      return ''
+    }
+
+    return `
+     <button onclick="app.carsController.deleteCar('${this.id}')" class="btn btn-outline-danger">
+        Delete Car
+      </button>
+    `
   }
 
   get card() {
@@ -37,9 +60,7 @@ export class Car {
                 <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img">
                 <span>${this.creator.name}</span>
               </div>
-              <button onclick="app.carsController.deleteCar('${this.id}')" class="btn btn-outline-danger">
-                Delete Car
-              </button>
+             ${this.deleteButton}
             </div>
           </div>
         </div>

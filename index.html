@@ -32,7 +32,10 @@
       </div>
       <div class="row align-items-center mb-4">
         <div class="col-md-7">
-          <div class="bg-light shadow rounded p-3">
+          <div id="carFormPlaceholder">
+            <p class="fs-1">Please log in to create a car listing</p>
+          </div>
+          <div id="carForm" class="bg-light shadow rounded p-3 d-none">
 
             <form onsubmit="app.carsController.createCarListing()">
               <div class="mb-3">
