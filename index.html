@@ -25,118 +25,131 @@
   <main>
 
     <!-- TODO put houses container here! -->
-
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="my-3">Cars</h>
+          <h2 class="my-3"> Homes</h2>
+        </div>
+        <div class="col-12">
+
         </div>
       </div>
-      <div class="row align-items-center mb-4">
-        <div class="col-md-7">
-          <div id="carFormPlaceholder">
-            <p class="fs-1">Please log in to create a car listing</p>
-          </div>
-          <div id="carForm" class="bg-light shadow rounded p-3 d-none">
 
-            <form onsubmit="app.carsController.createCarListing()">
-              <div class="mb-3">
-                <label for="carMake">Car Make</label>
-                <input id="carMake" name="make" type="text" required maxlength="500" placeholder="Car Make...">
-              </div>
-              <div class="mb-3">
-                <label for="carModel">Car Model</label>
-                <input id="carModel" name="model" type="text" required maxlength="500" placeholder="Car Model...">
-              </div>
-              <div class="mb-3">
-                <label for="carPrice">Car Price</label>
-                <input id="carPrice" name="price" type="number" required min="0" max="1000000" placeholder="0">
-              </div>
-              <div class="mb-3">
-                <label for="carYear">Car Year</label>
-                <input id="carYear" name="year" type="number" required min="1886" max="2025" placeholder="2025">
-              </div>
-              <div class="mb-3">
-                <label for="carImgUrl">Car Image URL</label>
-                <input id="carImgUrl" name="imgUrl" type="url" required maxlength="500" placeholder="Image URL...">
-              </div>
-              <div class="mb-3">
-                <label for="carEngineType">Car Engine Type</label>
-                <select name="engineType" id="carEngineType">
-                  <option value="unknown">Unknown</option>
-                  <option value="2 stroke">2 Stroke</option>
-                  <option value="4 cylinder">4 cylinder</option>
-                  <option value="v6">v6</option>
-                  <option value="v8">v8</option>
-                  <option value="v10">v10</option>
-                  <option value="v12">v12</option>
-                  <option value="small">small</option>
-                  <option value="medium">medium</option>
-                  <option value="large">large</option>
-                  <option value="chuncko">chuncko</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="carColor">Car Color</label>
-                <input id="carColor" name="color" type="color" value="#FF0000" class="check-input">
-              </div>
-              <div class="mb-3">
-                <label for="carDescription">Car Description</label>
-                <textarea name="description" id="carDescription" class="w-100" placeholder="Description of the car..."
-                  maxlength="500"></textarea>
-              </div>
-              <div class="text-end">
-                <button class="btn btn-outline-danger me-2" type="reset">
-                  Reset Form
-                </button>
-                <button class="btn btn-outline-dark" type="submit">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-
-        </div>
-        <div class="col-md-5">
-          <div class="p-2">
-            <img
-              src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNhcnxlbnwwfDF8MHx8fDI%3D"
-              alt="Car keys in a hand" class="car-form-img rounded">
-
+    </div>
+    <!-- SECTION Car Stuff -->
+    <Section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="my-3">Cars</h>
           </div>
         </div>
-      </div>
-      <div id="carListings" class="row">
-        <!-- STUB car card -->
-        <!-- <div class="col-12">
-          <div class="row bg-light shadow car-border" style="border-color: aqua;">
-            <div class="col-md-4 ps-0">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Wienermobile-NAIAS-2005.jpg"
-                alt="Weiner mobile" class="img-fluid">
+        <div class="row align-items-center mb-4">
+          <div class="col-md-7">
+            <div id="carFormPlaceholder">
+              <p class="fs-1">Please log in to create a car listing</p>
             </div>
-            <div class="col-md-8">
-              <div class="d-flex flex-column justify-content-between h-100">
-                <div>
-                  <p class="fs-3 mb-1">2024 Oscar Meyer Weiner Mobile</p>
-                  <small>Listed on 12/12/2020</small>
-                  <div class="d-flex mt-1 justify-content-between align-items-center">
-                    <p class="fs-3">$100001</p>
-                    <p class="fs-4">Engine: unknown</p>
-                  </div>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit recusandae sed sint voluptate
-                    eligendi molestiae consequuntur quibusdam iusto perferendis ad!</p>
+            <div id="carForm" class="bg-light shadow rounded p-3 d-none">
+
+              <form onsubmit="app.carsController.createCarListing()">
+                <div class="mb-3">
+                  <label for="carMake">Car Make</label>
+                  <input id="carMake" name="make" type="text" required maxlength="500" placeholder="Car Make...">
                 </div>
-                <div class="text-end mb-1">
-                  <button class="btn btn-outline-danger">
-                    Delete Car
+                <div class="mb-3">
+                  <label for="carModel">Car Model</label>
+                  <input id="carModel" name="model" type="text" required maxlength="500" placeholder="Car Model...">
+                </div>
+                <div class="mb-3">
+                  <label for="carPrice">Car Price</label>
+                  <input id="carPrice" name="price" type="number" required min="0" max="1000000" placeholder="0">
+                </div>
+                <div class="mb-3">
+                  <label for="carYear">Car Year</label>
+                  <input id="carYear" name="year" type="number" required min="1886" max="2025" placeholder="2025">
+                </div>
+                <div class="mb-3">
+                  <label for="carImgUrl">Car Image URL</label>
+                  <input id="carImgUrl" name="imgUrl" type="url" required maxlength="500" placeholder="Image URL...">
+                </div>
+                <div class="mb-3">
+                  <label for="carEngineType">Car Engine Type</label>
+                  <select name="engineType" id="carEngineType">
+                    <option value="unknown">Unknown</option>
+                    <option value="2 stroke">2 Stroke</option>
+                    <option value="4 cylinder">4 cylinder</option>
+                    <option value="v6">v6</option>
+                    <option value="v8">v8</option>
+                    <option value="v10">v10</option>
+                    <option value="v12">v12</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                    <option value="chuncko">chuncko</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="carColor">Car Color</label>
+                  <input id="carColor" name="color" type="color" value="#FF0000" class="check-input">
+                </div>
+                <div class="mb-3">
+                  <label for="carDescription">Car Description</label>
+                  <textarea name="description" id="carDescription" class="w-100" placeholder="Description of the car..."
+                    maxlength="500"></textarea>
+                </div>
+                <div class="text-end">
+                  <button class="btn btn-outline-danger me-2" type="reset">
+                    Reset Form
+                  </button>
+                  <button class="btn btn-outline-dark" type="submit">
+                    Submit
                   </button>
                 </div>
-              </div>
+              </form>
+            </div>
+
+          </div>
+          <div class="col-md-5">
+            <div class="p-2">
+              <img
+                src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNhcnxlbnwwfDF8MHx8fDI%3D"
+                alt="Car keys in a hand" class="car-form-img rounded">
+
             </div>
           </div>
-        </div> -->
+        </div>
+        <div id="carListings" class="row">
+          <!-- STUB car card -->
+          <!-- <div class="col-12">
+            <div class="row bg-light shadow car-border" style="border-color: aqua;">
+              <div class="col-md-4 ps-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Wienermobile-NAIAS-2005.jpg"
+                  alt="Weiner mobile" class="img-fluid">
+              </div>
+              <div class="col-md-8">
+                <div class="d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <p class="fs-3 mb-1">2024 Oscar Meyer Weiner Mobile</p>
+                    <small>Listed on 12/12/2020</small>
+                    <div class="d-flex mt-1 justify-content-between align-items-center">
+                      <p class="fs-3">$100001</p>
+                      <p class="fs-4">Engine: unknown</p>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit recusandae sed sint voluptate
+                      eligendi molestiae consequuntur quibusdam iusto perferendis ad!</p>
+                  </div>
+                  <div class="text-end mb-1">
+                    <button class="btn btn-outline-danger">
+                      Delete Car
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
       </div>
-    </div>
+    </Section>
   </main>
 
   <footer class="text-bg-dark">
