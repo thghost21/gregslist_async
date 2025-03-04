@@ -4,8 +4,8 @@ import { api } from "../utils/Axios.js"
 
 class CarsService {
   async createCar(carData) {
-    // TODO make this not broken
-    const response = await api.post('api/cars')
+    // NOTE carData becomes the payload (request body) for this request
+    const response = await api.post('api/cars', carData)
     console.log('CREATED CAR 📡📡📡📡', response);
   }
   async getCars() {
