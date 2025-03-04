@@ -31,6 +31,66 @@
           <h2 class="my-3">Cars</h>
         </div>
       </div>
+      <div class="row align-items-center mb-4">
+        <div class="col-md-7">
+          <div class="bg-light shadow rounded p-3">
+
+            <form onsubmit="app.carsController.createCarListing()">
+              <div class="mb-3">
+                <label for="carMake">Car Make</label>
+                <input id="carMake" name="make" type="text" required maxlength="500" placeholder="Car Make...">
+              </div>
+              <div class="mb-3">
+                <label for="carModel">Car Model</label>
+                <input id="carModel" name="model" type="text" required maxlength="500" placeholder="Car Model...">
+              </div>
+              <div class="mb-3">
+                <label for="carPrice">Car Price</label>
+                <input id="carPrice" name="price" type="number" required min="0" max="1000000" placeholder="0">
+              </div>
+              <div class="mb-3">
+                <label for="carYear">Car Year</label>
+                <input id="carYear" name="year" type="number" required min="1886" max="2025" placeholder="2025">
+              </div>
+              <div class="mb-3">
+                <label for="carImgUrl">Car Image URL</label>
+                <input id="carImgUrl" name="imgUrl" type="url" required maxlength="500" placeholder="Image URL...">
+              </div>
+              <div class="mb-3">
+                <label for="carEngineType">Car Engine Type</label>
+                <input id="carEngineType" name="engineType" type="text" required maxlength="50"
+                  placeholder="Car Engine Type...">
+              </div>
+              <div class="mb-3">
+                <label for="carColor">Car Color</label>
+                <input id="carColor" name="color" type="color" value="#FF0000" class="check-input">
+              </div>
+              <div class="mb-3">
+                <label for="carDescription">Car Description</label>
+                <textarea name="carDescription" id="carDescription" class="w-100"
+                  placeholder="Description of the car..." maxlength="500"></textarea>
+              </div>
+              <div class="text-end">
+                <button class="btn btn-outline-danger me-2" type="reset">
+                  Reset Form
+                </button>
+                <button class="btn btn-outline-dark" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-5">
+          <div class="p-2">
+            <img
+              src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGNhcnxlbnwwfDF8MHx8fDI%3D"
+              alt="Car keys in a hand" class="car-form-img rounded">
+
+          </div>
+        </div>
+      </div>
       <div id="carListings" class="row">
         <!-- STUB car card -->
         <!-- <div class="col-12">
