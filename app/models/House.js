@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class House {
   constructor(data) {
     this.id = data.id
@@ -12,10 +14,25 @@ export class House {
     this.creator = data.creator
   }
 
+  get deleteButton() {
+    const user = AppState.identity
+
+    if (user == null) {
+      return ''
+    }
+    if (this.creatorId != user.id) {
+      return ''
+    }
+    return `<div">
+              <button onclick="app.housesController.deleteHouse('${this.id}')" class="btn btn-outline-danger">Delete listing</button>
+            </div>`
+  }
+
+
 
   get HouseCard() {
     return `
-      <div class="d-flex py-2 ">
+        <div class="d-flex py-2 shadow ">
           <div class="col-md-4 ">
             <img class="img-fluid car-img"
               src="${this.imgUrl}"
@@ -27,18 +44,19 @@ export class House {
             <p>$${this.price.toLocaleString()}</p>
             <p>${this.description}
             </p>
-          </div>
-          <div class="d-flex flex-column justify-content-between">
-          <div class="d-flex">
-                <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img px-3">
-                <span>${this.creator.name}</span>
-              </div>
-          <div class="text-end">
-            <button onclick="app.housesController.deleteHouse('${this.id}')" class="btn btn-outline-danger">Delete listing</button>
+            <div class="d-flex flex-column justify-content-end me-auto p-2">
+            <div class="d-flex">
+                  <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img px-3">
+                  <span>${this.creator.name}</span>
+                </div>
+            <div>
+            ${this.deleteButton}
+            </div>
           </div>
           
           </div>
         </div>
-    `
+          
+        `
   }
 }

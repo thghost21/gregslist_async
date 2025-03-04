@@ -5,6 +5,7 @@ import { Pop } from "../utils/Pop.js";
 
 export class HouseController {
   constructor() {
+    AppState.on('identity', this.drawHouses)
     AppState.on('houses', this.drawHouses)
     this.getHouses()
   }
