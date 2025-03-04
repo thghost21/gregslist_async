@@ -28,8 +28,15 @@ export class House {
             <p>${this.description}
             </p>
           </div>
+          <div class="d-flex flex-column justify-content-between">
+          <div class="d-flex">
+                <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img px-3">
+                <span>${this.creator.name}</span>
+              </div>
           <div class="text-end">
-            <button class="btn btn-outline-danger">Delete listing</button>
+            <button onclick="app.housesController.deleteHouse('${this.id}')" class="btn btn-outline-danger">Delete listing</button>
+          </div>
+          
           </div>
         </div>
     `

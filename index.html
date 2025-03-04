@@ -33,8 +33,8 @@
             <h2 class="my-3"> Homes</h2>
           </div>
           <div class="col-md-6">
-            <div>
-              <form>
+            <div class="shadow p-3">
+              <form onsubmit="app.housesController.createHouseListing()">
                 <div class="mb-3">
                   <label for="houseBedrooms">Bedrooms</label>
                   <input id="houseBedrooms" name="bedrooms" type="number" required>
@@ -55,7 +55,23 @@
                   <label for="housePrice">Price</label>
                   <input id="housePrice" name="price" type="number" required>
                 </div>
-
+                <div class="mb-3">
+                  <label for="houseimgUrl">Image URL</label>
+                  <input id="houseimgUrl" name="imgUrl" type="url" required maxlength="500">
+                </div>
+                <div class="mb-3">
+                  <label for="houseDescription">Description</label>
+                  <textarea class="w-100" id="houseDescription" name="description" placeholder="Enter a description..."
+                    maxlength="5000"></textarea>
+                </div>
+                <div class="text-end">
+                  <button class="btn btn-outline-danger me-2" type="reset">
+                    Reset Form
+                  </button>
+                  <button class="btn btn-outline-dark" type="submit">
+                    Submit
+                  </button>
+                </div>
               </form>
             </div>
 
