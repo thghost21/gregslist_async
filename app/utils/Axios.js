@@ -1,10 +1,11 @@
 import { baseURL } from '../env.js';
 import { logger } from '../utils/Logger.js';
 
+// NOTE whenever we are interacting with the Codeworks Sandbox API, use this instance of axios. Otherwise, create a new instance per API
 // @ts-ignore
 // eslint-disable-next-line no-undef
 export const api = axios.create({
-  baseURL: baseURL,
+  baseURL: baseURL, // 'https://sandbox.codeworksacademy.com/'
   timeout: 8000,
   withCredentials: true
 })
