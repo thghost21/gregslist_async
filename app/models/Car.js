@@ -37,7 +37,7 @@ export class Car {
                 <img src="${this.creator.picture}" alt="${this.creator.name}" class="creator-img">
                 <span>${this.creator.name}</span>
               </div>
-              <button class="btn btn-outline-danger">
+              <button onclick="app.carsController.deleteCar('${this.id}')" class="btn btn-outline-danger">
                 Delete Car
               </button>
             </div>

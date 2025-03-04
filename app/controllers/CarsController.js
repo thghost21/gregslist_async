@@ -39,4 +39,20 @@ export class CarsController {
       Pop.error(error, 'Could not create car!')
     }
   }
+
+  async deleteCar(carId) {
+    try {
+      const confirmed = await Pop.confirm('Are you sure you want to delete this car?', 'It will be gone forever', 'Yes I am sure', 'No I have changed my mind')
+
+      if (!confirmed) {
+        return
+      }
+
+      await carsService.deleteCar(carId)
+
+    } catch (error) {
+      console.error('COULD NOT DELETE CAR', error);
+      Pop.error(error, 'Could not delete car!')
+    }
+  }
 }

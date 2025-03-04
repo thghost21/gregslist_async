@@ -3,6 +3,11 @@ import { Car } from "../models/Car.js";
 import { api } from "../utils/Axios.js"
 
 class CarsService {
+  async deleteCar(carId) {
+    const response = await api.delete(`api/cars/${carId}`)
+    console.log('DELETED CAR 📡📡📡📡', response.data);
+
+  }
   async createCar(carData) {
     // NOTE carData becomes the payload (request body) for this request
     const response = await api.post('api/cars', carData)
