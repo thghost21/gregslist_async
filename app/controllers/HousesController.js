@@ -22,6 +22,8 @@ export class HouseController {
   drawHouses() {
     const houses = AppState.houses
     let content = ''
-    houses.forEach(house => content)
+    houses.forEach(house => content += house.HouseCard)
+    const housesElem = document.getElementById('housesListings')
+    housesElem.innerHTML = content
   }
 }
