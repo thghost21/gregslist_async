@@ -7,6 +7,9 @@ class CarsService {
     const response = await api.delete(`api/cars/${carId}`)
     console.log('DELETED CAR 📡📡📡📡', response.data);
 
+    const cars = AppState.cars
+    const carIndex = cars.findIndex(car => car.id == carId)
+    cars.splice(carIndex, 1)
   }
   async createCar(carData) {
     // NOTE carData becomes the payload (request body) for this request
